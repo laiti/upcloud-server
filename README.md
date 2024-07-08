@@ -3,13 +3,17 @@ Terraform scripts to provision simple virtual server to UpCloud
 
 ## Setting up
 
-1. Choose workspace name and `workspace.tfvars.example` to `yourworkspace.tfvars`. Usually workspaces are named development and production or similar.
+1. To use the UpCloud API, you must disable MFA first. Then, configure two environment variables:
+`export UPCLOUD_USERNAME=yourusername`
+`export UPCLOUD_PASSWORD=yoursecurpassword`
 
-2. If you wish have statefile somewhere else than in repository (for example S3 or synchronized directory), copy `statefile.tf.example` to `statefile.tf` and edit.
+2. Choose workspace name and `workspace.tfvars.example` to `yourworkspace.tfvars`. Usually workspaces are named development and production or similar.
 
-3. Run `terraform init` to get provider files etc.
+3. If you wish have statefile somewhere else than in repository (for example S3 or synchronized directory), copy `statefile.tf.example` to `statefile.tf` and edit.
 
-4. Create your workspace: `terraform workspace new yourworkspace`
+4. Run `terraform init` to get provider files etc.
+
+5. Create your workspace: `terraform workspace new yourworkspace`
 
 ## Provisioning
 
