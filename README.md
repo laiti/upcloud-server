@@ -20,3 +20,19 @@ Terraform scripts to provision simple virtual server to UpCloud
 `terraform workspace select yourworkspace`
 
 `terraform apply -var-file=yourworkspace.tfvars`
+
+## Tools
+
+Tools directory contains simple tools for interacting with UpCloud API.
+
+###`getuuids.py`
+
+UpCloud does not provide any handy lists with disk image UUIDs (or at least I've found none) so this script fetches them from the API. Requires the same environment variables as the 'Setting up' part above.
+
+The `vars.tf` contains only couple of the image UUIDs and they deprecate over time anyway.
+
+To run:
+
+`pip install upcloud-api`
+
+`python getuuids.py`
