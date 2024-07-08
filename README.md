@@ -25,7 +25,7 @@ Terraform scripts to provision simple virtual server to UpCloud
 
 Tools directory contains simple tools for interacting with UpCloud API.
 
-###`getuuids.py`
+### `getuuids.py`
 
 UpCloud does not provide any handy lists with disk image UUIDs (or at least I've found none) so this script fetches them from the API. Requires the same environment variables as the 'Setting up' part above.
 

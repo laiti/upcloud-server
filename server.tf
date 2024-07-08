@@ -17,20 +17,22 @@ resource "upcloud_server" "server" {
   }
 
   # Network interfaces
-  network_interface {
-    type              = "public"
-    ip_address_family = "IPv4"
-  }
-
-  network_interface {
-    type              = "public"
-    ip_address_family = "IPv6"
+  dynamic "network_interface" {
+    for_each = var.public_network
+    content {
+      type              = "public"
+      ip_address_family = network_interface.value
+    }
   }
 
   # No need for utility NW for a single server
-  #network_interface {
-  #  type = "utility"
-  #}
+  dynamic "network_interface" {
+    for_each = var.utility_network
+    content {
+      type              = "utility"
+      ip_address_family = network_interface.value
+    }
+  }
 
   connection {
     # Server public IP addr
