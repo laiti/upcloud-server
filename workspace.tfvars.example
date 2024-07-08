@@ -1,0 +1,5 @@
+env                  = "myworkspace"
+server_hostname      = "myhost"
+server_domain_name   = "example.com"
+storage_uuid         = "01000000-0000-4000-8000-000020070100"
+public_ssh_key_path  = "~/.ssh/id_rsa.pub"
