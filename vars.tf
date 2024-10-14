@@ -12,7 +12,7 @@ variable server_zone {
 variable server_plan {
   description = "Server CPU and memory configuration"
   type        = string
-  default     = "DEV-1xCPU-1GB"
+  default     = "DEV-1xCPU-1GB-10GB"
 }
 
 variable storage_uuid {

@@ -10,7 +10,7 @@ resource "upcloud_server" "server" {
 
   template {
     # Storage size in GB
-    size    = 20
+    size    = 10
     storage = var.storage_uuid
     title   = "${var.server_hostname} root disk"
     encrypt = true
