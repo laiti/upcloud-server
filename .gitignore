@@ -1,3 +1,4 @@
 statefile.tf
 .terraform
 *.tfvars
+tools/.venv
