@@ -65,8 +65,8 @@ variable ssh_port {
   default     = 22
 }
 
-variable ssh_allow {
+variable firewall_allow {
   description = "List of IP ranges to allow SSH from"
-  type        = list(list(string))
-  default     = [[]]
+  type        = list(any)
+  default     = [{}]
 }
