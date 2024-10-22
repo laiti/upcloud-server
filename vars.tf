@@ -58,3 +58,15 @@ variable public_ssh_key_path {
   default     = "~/.ssh/id_rsa.pub"
   sensitive   = true
 }
+
+variable ssh_port {
+  description = "The port to allow SSH on"
+  type        = number
+  default     = 22
+}
+
+variable ssh_allow {
+  description = "List of IP ranges to allow SSH from"
+  type        = list(list(string))
+  default     = [[]]
+}
