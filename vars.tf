@@ -73,7 +73,7 @@ variable firewall_allow {
 }
 
 variable upcloud_dns {
-  description = "List of UpCloud DNS server IPv4 addresses to allow traffic from"
+  description = "List of UpCloud DNS server addresses for firewall"
   type        = list(string)
   default     = ["94.237.127.9", "94.237.40.9", "2a04:3540:53::1", "2a04:3544:53::1"]
 }
