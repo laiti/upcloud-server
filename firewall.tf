@@ -50,4 +50,10 @@ resource "upcloud_firewall_rules" "server_firewall" {
             source_address_end     = firewall_rule.value
         }
     }
+
+    // Default rule: drop everything else
+    firewall_rule {
+        action    = "drop"
+        direction = "in"
+    }
 }
