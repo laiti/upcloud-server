@@ -62,7 +62,14 @@ variable public_ssh_key_path {
 variable firewall_allow {
   description = "Ports and addresses to allow traffic from"
   type        = list(any)
-  default     = [{}]
+  default     = [
+    {
+      name       = "SSH"
+      port_start = "22"
+      family     = "IPv4"
+      protocol   = "tcp"
+    }
+  ]
 }
 
 variable upcloud_dns {
