@@ -1,5 +1,5 @@
 resource "upcloud_server" "server" {
-  firewall = false
+  firewall = true
   hostname = "${var.server_hostname}.${var.server_domain_name}"
   title    = "${var.server_hostname}"
   timezone = var.server_timezone
