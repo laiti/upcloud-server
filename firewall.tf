@@ -16,4 +16,38 @@ resource "upcloud_firewall_rules" "server_firewall" {
             source_address_end     = try(firewall_rule.value.end, firewall_rule.value.start, null)
         }
     }
+
+    // Create firewall rules for DNS entries in upcloud_dns. TF does not support nested for_each so
+    // we create TCP and UDP rules separately
+    dynamic "firewall_rule" {
+        for_each = var.upcloud_dns
+        content {
+            action                 = "accept"
+            direction              = "in"
+            comment                = "Allow DNS from UpCloud DNS servers (UDP)"
+            destination_port_start = 53
+            destination_port_end   = 53
+            // set family to IPv6 if it contains colon, otherwise use IPv4
+            family                 = length(regexall(":", firewall_rule.value)) > 0 ? "IPv6" : "IPv4"
+            protocol               = "udp"
+            source_address_start   = firewall_rule.value
+            source_address_end     = firewall_rule.value
+        }
+    }
+
+    dynamic "firewall_rule" {
+        for_each = var.upcloud_dns
+        content {
+            action                 = "accept"
+            direction              = "in"
+            comment                = "Allow DNS from UpCloud DNS servers (TCP)"
+            destination_port_start = 53
+            destination_port_end   = 53
+            // set family to IPv6 if it contains colon, otherwise use IPv4
+            family                 = length(regexall(":", firewall_rule.value)) > 0 ? "IPv6" : "IPv4"
+            protocol               = "tcp"
+            source_address_start   = firewall_rule.value
+            source_address_end     = firewall_rule.value
+        }
+    }
 }
