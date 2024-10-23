@@ -5,6 +5,11 @@ storage_uuid         = "01000000-0000-4000-8000-000020070100"
 utility_network      = []
 public_network       = ["IPv4", "IPv6"]
 public_ssh_key_path  = "~/.ssh/id_rsa.pub"
-ssh_port             = 22
-ssh_allow_start      = 192.168.1.1
-ssh_allow_end        = 192.168.1.255
+firewall_allow       = [
+    {
+      name       = "SSH"
+      port_start = "22"
+      family     = "IPv4"
+      protocol   = "tcp"
+    },
+]
