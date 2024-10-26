@@ -53,3 +53,9 @@ resource "upcloud_server" "server" {
     inline = [ "apt-get update && apt-get -y upgrade" ]
   }
 }
+
+resource "null_resource" "set_ptr_record" {
+  provisioner "local-exec" {
+    command = "tools/set-ptr-record.sh ${local.server_public_ipv4_address} ${local.server_hostname}"
+  }
+}
