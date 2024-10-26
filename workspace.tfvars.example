@@ -1,4 +1,5 @@
 env                  = "myworkspace"
+server_plan          = "DEV-1xCPU-1GB-10GB"
 server_hostname      = "myhost"
 server_domain_name   = "example.com"
 storage_uuid         = "01000000-0000-4000-8000-000020070100"
@@ -12,4 +13,28 @@ firewall_allow       = [
       family     = "IPv4"
       protocol   = "tcp"
     },
+    {
+      name       = "HTTPS"
+      port_start = "443"
+      family     = "IPv4"
+      protocol   = "tcp"
+    },
+    {
+      name       = "HTTPS"
+      port_start = "443"
+      family     = "IPv6"
+      protocol   = "tcp"
+    },
+    {
+      name       = "HTTP"
+      port_start = "80"
+      family     = "IPv6"
+      protocol   = "tcp"
+    },
+    {
+      name       = "HTTP"
+      port_start = "80"
+      family     = "IPv4"
+      protocol   = "tcp"
+    }
 ]

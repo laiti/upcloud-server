@@ -17,7 +17,7 @@ resource "upcloud_firewall_rules" "server_firewall" {
         }
     }
 
-    // Create firewall rules for DNS entries in upcloud_dns. TF does not support nested for_each so
+    // Create firewall rules for DNS entries in upcloud_dns. TF does not support nested for_each statements so
     // we create TCP and UDP rules separately
     dynamic "firewall_rule" {
         for_each = var.upcloud_dns
