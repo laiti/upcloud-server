@@ -7,34 +7,34 @@ utility_network      = []
 public_network       = ["IPv4", "IPv6"]
 public_ssh_key_path  = "~/.ssh/id_rsa.pub"
 firewall_allow       = [
-    {
-      name       = "SSH"
-      port_start = "22"
-      family     = "IPv4"
-      protocol   = "tcp"
-    },
-    {
-      name       = "HTTPS"
-      port_start = "443"
-      family     = "IPv4"
-      protocol   = "tcp"
-    },
-    {
-      name       = "HTTPS"
-      port_start = "443"
-      family     = "IPv6"
-      protocol   = "tcp"
-    },
-    {
-      name       = "HTTP"
-      port_start = "80"
-      family     = "IPv6"
-      protocol   = "tcp"
-    },
-    {
-      name       = "HTTP"
-      port_start = "80"
-      family     = "IPv4"
-      protocol   = "tcp"
-    }
+  {
+    name       = "SSH"
+    port_start = "22"
+    family     = "IPv4"
+    protocol   = "tcp"
+  },
+  {
+    name       = "HTTPS"
+    port_start = "443"
+    family     = "IPv4"
+    protocol   = "tcp"
+  },
+  {
+    name       = "HTTPS"
+    port_start = "443"
+    family     = "IPv6"
+    protocol   = "tcp"
+  },
+  {
+    name       = "HTTP"
+    port_start = "80"
+    family     = "IPv6"
+    protocol   = "tcp"
+  },
+  {
+    name       = "HTTP"
+    port_start = "80"
+    family     = "IPv4"
+    protocol   = "tcp"
+  }
 ]
