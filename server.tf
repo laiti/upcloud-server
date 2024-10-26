@@ -1,12 +1,11 @@
 resource "upcloud_server" "server" {
-  firewall = true
+  firewall = var.firewall
   hostname = "${var.server_hostname}.${var.server_domain_name}"
   title    = "${var.server_hostname}"
   timezone = var.server_timezone
   zone     = var.server_zone
   plan     = var.server_plan
   metadata = true
-
 
   template {
     # Storage size in GB

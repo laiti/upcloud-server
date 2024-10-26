@@ -59,6 +59,12 @@ variable public_ssh_key_path {
   sensitive   = true
 }
 
+variable firewall {
+  description = "For switching firewall on or off"
+  type        = bool
+  default     = false
+}
+
 variable firewall_allow {
   description = "Ports and addresses to allow traffic from"
   type        = list(any)
