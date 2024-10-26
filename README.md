@@ -34,3 +34,7 @@ To run:
 `pip install upcloud-api`
 
 `python getuuids.py`
+
+### `set-ptr-record.sh`
+
+A script to set PTR record via UpCloud API. UpCloud Terraform provider does not support PTR records so we call this script from Terraform using null provider.
