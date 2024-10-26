@@ -13,8 +13,6 @@ then
   exit 1
 fi
 
-# Send PTR record to UpCloud API
-
 curl -u ${UPCLOUD_USERNAME}:${UPCLOUD_PASSWORD} -X PUT -H "Content-Type: application/json" -d "{ \"ip_address\": { \"ptr_record\": \"${2}\" } }" https://api.upcloud.com/1.3/ip_address/${1}
 
 exit 0
