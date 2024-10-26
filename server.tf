@@ -54,6 +54,10 @@ resource "upcloud_server" "server" {
   }
 }
 
+
+# UpCloud Terraform provider does not support setting PTR record for a host
+# but their API does so we set it via this script.
+
 resource "null_resource" "set_ptr_record" {
   provisioner "local-exec" {
     command = "tools/set-ptr-record.sh ${local.server_public_ipv4_address} ${local.server_hostname}"
