@@ -25,8 +25,8 @@ resource "upcloud_firewall_rules" "server_firewall" {
             action                 = "accept"
             direction              = "in"
             comment                = "Allow DNS from UpCloud DNS servers (UDP)"
-            destination_port_start = 53
-            destination_port_end   = 53
+            source_port_start      = 53
+            source_port_end        = 53
             // set family to IPv6 if it contains colon, otherwise use IPv4
             family                 = length(regexall(":", firewall_rule.value)) > 0 ? "IPv6" : "IPv4"
             protocol               = "udp"
@@ -41,8 +41,8 @@ resource "upcloud_firewall_rules" "server_firewall" {
             action                 = "accept"
             direction              = "in"
             comment                = "Allow DNS from UpCloud DNS servers (TCP)"
-            destination_port_start = 53
-            destination_port_end   = 53
+            source_port_start      = 53
+            source_port_end        = 53
             // set family to IPv6 if it contains colon, otherwise use IPv4
             family                 = length(regexall(":", firewall_rule.value)) > 0 ? "IPv6" : "IPv4"
             protocol               = "tcp"
