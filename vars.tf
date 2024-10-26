@@ -58,3 +58,28 @@ variable public_ssh_key_path {
   default     = "~/.ssh/id_rsa.pub"
   sensitive   = true
 }
+
+variable firewall {
+  description = "For switching firewall on or off"
+  type        = bool
+  default     = false
+}
+
+variable firewall_allow {
+  description = "Ports and addresses to allow traffic from"
+  type        = list(any)
+  default     = [
+    {
+      name       = "SSH"
+      port_start = "22"
+      family     = "IPv4"
+      protocol   = "tcp"
+    }
+  ]
+}
+
+variable upcloud_dns {
+  description = "List of UpCloud DNS server addresses for firewall"
+  type        = list(string)
+  default     = ["94.237.127.9", "94.237.40.9", "2a04:3540:53::1", "2a04:3544:53::1"]
+}
