@@ -35,6 +35,15 @@ resource "upcloud_firewall_rules" "server_firewall" {
         }
     }
 
+    // Allow ICMP
+    firewall_rule {
+        action    = "accept"
+        direction = "in"
+        comment   = "Allow incoming ICMP"
+        family    = "IPv4"
+        protocol  = "icmp"
+    }
+
     // Add SSH allow rules for each network in ssh_allow list
     dynamic "firewall_rule" {
         for_each = var.firewall_allow
