@@ -44,7 +44,7 @@ resource "upcloud_firewall_rules" "server_firewall" {
         protocol  = "icmp"
     }
 
-    // Add SSH allow rules for each network in ssh_allow list
+    // Allow all rules set in firewall_allow
     dynamic "firewall_rule" {
         for_each = var.firewall_allow
         content {
