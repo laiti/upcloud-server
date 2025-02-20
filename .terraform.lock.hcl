@@ -4,6 +4,7 @@
 provider "registry.terraform.io/hashicorp/local" {
   version = "2.5.2"
   hashes = [
+    "h1:IyFbOIO6mhikFNL/2h1iZJ6kyN3U00jgkpCLUCThAfE=",
     "h1:JlMZD6nYqJ8sSrFfEAH0Vk/SL8WLZRmFaMUF9PJK5wM=",
     "zh:136299545178ce281c56f36965bf91c35407c11897f7082b3b983d86cb79b511",
     "zh:3b4486858aa9cb8163378722b642c57c529b6c64bfbfc9461d940a84cd66ebea",
@@ -24,6 +25,7 @@ provider "registry.terraform.io/hashicorp/null" {
   version = "3.2.3"
   hashes = [
     "h1:+AnORRgFbRO6qqcfaQyeX80W0eX3VmjadjnUFUJTiXo=",
+    "h1:I0Um8UkrMUb81Fxq/dxbr3HLP2cecTH2WMJiwKSrwQY=",
     "zh:22d062e5278d872fe7aed834f5577ba0a5afe34a3bdac2b81f828d8d3e6706d2",
     "zh:23dead00493ad863729495dc212fd6c29b8293e707b055ce5ba21ee453ce552d",
     "zh:28299accf21763ca1ca144d8f660688d7c2ad0b105b7202554ca60b02a3856d3",
@@ -43,6 +45,7 @@ provider "registry.terraform.io/upcloudltd/upcloud" {
   version     = "5.19.0"
   constraints = "~> 5.19.0"
   hashes = [
+    "h1:/lpbx0RSztoC4PIptyUQ5hFnkUZCqDilSHzJSa95OAk=",
     "h1:Eg/n5+WHoy++QColP5QwPBlt7RqDeUV2FCaquzVjYiw=",
     "zh:1918732620fa5cf6e098ca84c865d6aac4fc18a30e85592d3eace7f93abd3b25",
     "zh:22f8e83613d6e465172c474efe79c4a3ae9336d979247b7d8d0004bdc5927571",
