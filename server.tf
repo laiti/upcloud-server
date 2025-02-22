@@ -50,7 +50,7 @@ resource "upcloud_server" "server" {
   }
 
   provisioner "remote-exec" {
-    inline = [ "apt-get update && apt-get -y upgrade" ]
+    inline = var.init_command
   }
 }
 
