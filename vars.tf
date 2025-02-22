@@ -59,6 +59,12 @@ variable public_ssh_key_path {
   sensitive   = true
 }
 
+variable init_command {
+  description = "Commands to run on the server after creation"
+  type        = list(string)
+  default     = ["apt-get update", "apt-get -y upgrade"]
+}
+
 variable firewall {
   description = "For switching firewall on or off"
   type        = bool
