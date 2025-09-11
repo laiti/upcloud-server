@@ -35,7 +35,7 @@ variable server_domain_name {
 variable server_timezone {
   description = "The timezone of the server"
   type        = string
-  default     = "Europe/Helsinki"
+  default     = "UTC"
 }
 
 # Network address families.  To disable nerwork, set to []. For both families, use ["IPv4", "IPv6"]
