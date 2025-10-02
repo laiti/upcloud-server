@@ -20,7 +20,8 @@ variable storage_uuid {
   type        = string
   # Ubuntu Server 24.04 LTS (Noble Numbat)': 01000000-0000-4000-8000-000030240200
   # Debian GNU/Linux 12 (Bookworm)': 01000000-0000-4000-8000-000020070100
-  default     = "01000000-0000-4000-8000-000030240200"
+  # Debian GNU/Linucx 13 (Trixie)': 01000000-0000-4000-8000-000020080100
+  default     = "01000000-0000-4000-8000-000020080100"
 }
 
 variable server_hostname {
