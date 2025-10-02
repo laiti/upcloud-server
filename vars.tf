@@ -32,6 +32,8 @@ variable server_domain_name {
   description = "The domain name of the server"
   type        = string
 }
+
+# We're running Linux so HW clock must be in UTC
 variable server_timezone {
   description = "The timezone of the server"
   type        = string
@@ -88,4 +90,10 @@ variable upcloud_dns {
   description = "List of UpCloud DNS server addresses for firewall"
   type        = list(string)
   default     = ["94.237.127.9", "94.237.40.9", "2a04:3540:53::1", "2a04:3544:53::1"]
+}
+
+variable upcloud_dhcp {
+  description = "List of UpCloud DHCP server addresses for firewall"
+  type        = list(string)
+  default     = ["94.237.16.1"]
 }
