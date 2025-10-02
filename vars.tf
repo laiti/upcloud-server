@@ -32,10 +32,12 @@ variable server_domain_name {
   description = "The domain name of the server"
   type        = string
 }
+
+# We're running Linux so HW clock must be in UTC
 variable server_timezone {
   description = "The timezone of the server"
   type        = string
-  default     = "Europe/Helsinki"
+  default     = "UTC"
 }
 
 # Network address families.  To disable nerwork, set to []. For both families, use ["IPv4", "IPv6"]
