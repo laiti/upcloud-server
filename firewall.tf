@@ -35,6 +35,23 @@ resource "upcloud_firewall_rules" "server_firewall" {
         }
     }
 
+    dynamic "firewall_rule" {
+        for_each = var.upcloud_dhcp
+        content {
+            action                 = "accept"
+            direction              = "in"
+            comment                = "Allow DHCP from UpCloud DHCP servers (UDP)"
+            source_port_start      = 67
+            source_port_end        = 68
+            destination_port_start = 67
+            destination_port_end   = 68
+            family                 = "IPv4"
+            protocol               = "udp"
+            source_address_start   = firewall_rule.value
+            source_address_end     = firewall_rule.value
+        }
+    }
+
     // Allow ICMP
     firewall_rule {
         action    = "accept"

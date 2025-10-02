@@ -35,7 +35,7 @@ variable server_domain_name {
 variable server_timezone {
   description = "The timezone of the server"
   type        = string
-  default     = "UTC"
+  default     = "Europe/Helsinki"
 }
 
 # Network address families.  To disable nerwork, set to []. For both families, use ["IPv4", "IPv6"]
@@ -88,4 +88,10 @@ variable upcloud_dns {
   description = "List of UpCloud DNS server addresses for firewall"
   type        = list(string)
   default     = ["94.237.127.9", "94.237.40.9", "2a04:3540:53::1", "2a04:3544:53::1"]
+}
+
+variable upcloud_dhcp {
+  description = "List of UpCloud DHCP server addresses for firewall"
+  type        = list(string)
+  default     = ["94.237.16.1"]
 }
